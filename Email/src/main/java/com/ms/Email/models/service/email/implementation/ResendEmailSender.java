@@ -23,7 +23,7 @@ public class ResendEmailSender implements EmailSenderService {
 
         CreateEmailOptions params = CreateEmailOptions.builder()
                 .from(email)
-                .to(emailDTO.to())
+                .to(emailDTO.emailTo())
                 .subject(emailDTO.subject())
                 .html(emailDTO.body())
                 .build();

@@ -30,7 +30,7 @@ public class EmailService {
         try {
             EmailDTO emailDto = new EmailDTO(
                     emailModel.getUserId(),
-                    emailModel.getTo(),
+                    emailModel.getEmailTo(),
                     emailModel.getSubject(),
                     emailModel.getBody()
             );

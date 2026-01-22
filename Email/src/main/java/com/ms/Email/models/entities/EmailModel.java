@@ -14,19 +14,26 @@ public class EmailModel {
     private UUID emailId;
 
     private UUID userId;
+
     private String emailFrom;
-    private String to;
+
+    @Column(name = "email_to")
+    private String emailTo;
+
     private String subject;
+
     @Column(columnDefinition = "TEXT")
     private String body;
+
     private LocalDateTime sendDateEmail;
+
     private EmailStatus emailStatus;
 
-    public EmailModel(UUID emailId, UUID userId,String emailFrom, String to, String subject, String body, LocalDateTime sendDateEmail, EmailStatus emailStatus) {
+    public EmailModel(UUID emailId, UUID userId,String emailFrom, String emailTo, String subject, String body, LocalDateTime sendDateEmail, EmailStatus emailStatus) {
         this.emailId = emailId;
         this.userId = userId;
         this.emailFrom = emailFrom;
-        this.to = to;
+        this.emailTo = emailTo;
         this.subject = subject;
         this.body = body;
         this.sendDateEmail = sendDateEmail;
@@ -59,12 +66,12 @@ public class EmailModel {
         this.userId = userId;
     }
 
-    public String getTo() {
-        return to;
+    public String getEmailTo() {
+        return emailTo;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setEmailTo(String to) {
+        this.emailTo = to;
     }
 
     public String getSubject() {
